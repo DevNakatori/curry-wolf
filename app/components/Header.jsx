@@ -10,6 +10,8 @@ export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
     <header className="header">
+      <div className='container'>
+      <div className='inner-header'>
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
         <img src={shopLogo} alt='logo' />
         {/* <strong>{shop.name} </strong> */}
@@ -20,6 +22,8 @@ export function Header({header, isLoggedIn, cart}) {
         primaryDomainUrl={header.shop.primaryDomain.url}
       />
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+      </div>
+      </div>
     </header>
   );
 }

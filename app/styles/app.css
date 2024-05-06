@@ -469,3 +469,55 @@ aside li {
 .account-logout {
   display: inline-block;
 }
+
+/* custom css start  */
+
+.container {
+  max-width: 1710px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+.inner-header {
+  display: flex;
+  align-items: center;
+}
+.header-menu-desktop{
+  display: flex;
+  grid-gap: 2.1875em;
+  margin-left:2rem;
+}
+.header{padding: 18px 0;}
+.header-menu-desktop a{
+  font-size: 25px;
+  line-height:31px;
+  color: #fff !important;
+  font-weight: 400 !important;
+}
+.header-ctas{    
+  grid-gap: 2rem;
+}
+nav.header-ctas a {
+  color: #fff;
+}
+@media (max-width: 768px){
+  .header-menu-desktop{
+      grid-gap: 1.1875em;
+  }
+  .header-menu-desktop a{
+      font-size: 20px;
+      line-height: 25px;
+  }
+
+}
+@media (max-width: 767px){
+  .header-menu-mobile a{
+      font-size: 18px;
+      line-height:18px;
+      font-weight: 400 !important;
+  }
+  .header-menu-mobile{
+      grid-gap: 1rem;
+  }
+  .header-ctas{grid-gap: 1rem;}
+}
