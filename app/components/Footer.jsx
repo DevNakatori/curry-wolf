@@ -1,18 +1,30 @@
 import {NavLink} from '@remix-run/react';
 import {useRootLoaderData} from '~/lib/root-data';
+import {KeepInTouch} from '~/routes/footerData';
 
 /**
  * @param {FooterQuery & {shop: HeaderQuery['shop']}}
  */
+
 export function Footer({menu, shop}) {
   return (
     <footer className="footer">
+      <div className='container'>
       {menu && shop?.primaryDomain?.url && (
+        <>
         <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
+        <KeepInTouch />
+        </>
       )}
+    
+      </div>
     </footer>
+  
   );
 }
+
+
+
 
 /**
  * @param {{
@@ -20,11 +32,14 @@ export function Footer({menu, shop}) {
  *   primaryDomainUrl: HeaderQuery['shop']['primaryDomain']['url'];
  * }}
  */
+
+
 function FooterMenu({menu, primaryDomainUrl}) {
   const {publicStoreDomain} = useRootLoaderData();
 
   return (
     <nav className="footer-menu" role="navigation">
+      <span className='yellow-head'>Menu</span>
       {(menu || FALLBACK_FOOTER_MENU).items.map((item) => {
         if (!item.url) return null;
         // if the url is internal, we strip the domain

@@ -63,7 +63,7 @@ export async function loader({context}) {
   const footerPromise = storefront.query(FOOTER_QUERY, {
     cache: storefront.CacheLong(),
     variables: {
-      footerMenuHandle: 'footer', // Adjust to your footer menu handle
+      footerMenuHandle: 'new-footer', // Adjust to your footer menu handle
     },
   });
 
