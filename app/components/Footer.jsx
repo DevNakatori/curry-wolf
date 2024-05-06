@@ -1,6 +1,7 @@
 import {NavLink} from '@remix-run/react';
 import {useRootLoaderData} from '~/lib/root-data';
 import {KeepInTouch} from '~/routes/footerData';
+import footerLogo from '../assets/footer-bg-logo.png';
 
 /**
  * @param {FooterQuery & {shop: HeaderQuery['shop']}}
@@ -12,8 +13,11 @@ export function Footer({menu, shop}) {
       <div className='container'>
       {menu && shop?.primaryDomain?.url && (
         <>
-        <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
-        <KeepInTouch />
+         <div className='footer-child'>
+            <FooterMenu menu={menu} primaryDomainUrl={shop.primaryDomain.url} />
+            <KeepInTouch />
+            <img className="footer-bg-img" src={footerLogo} alt='footer-logo' />
+         </div>
         </>
       )}
     
@@ -38,10 +42,8 @@ function FooterMenu({menu, primaryDomainUrl}) {
   const {publicStoreDomain} = useRootLoaderData();
 
   return (
-    <div className='footer-child'>
     <nav className="footer-menu" role="navigation">
       <span className='yellow-head'>Menu</span>
-      <div className='footer-inner'>
         <ul>
       {(menu || FALLBACK_FOOTER_MENU).items.map((item) => {
         if (!item.url) return null;
@@ -72,9 +74,7 @@ function FooterMenu({menu, primaryDomainUrl}) {
         );
       })}
        </ul>
-      </div>
     </nav>
-    </div>
   );
 }
 
