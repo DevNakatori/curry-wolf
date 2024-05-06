@@ -38,8 +38,11 @@ function FooterMenu({menu, primaryDomainUrl}) {
   const {publicStoreDomain} = useRootLoaderData();
 
   return (
+    <div className='footer-child'>
     <nav className="footer-menu" role="navigation">
       <span className='yellow-head'>Menu</span>
+      <div className='footer-inner'>
+        <ul>
       {(menu || FALLBACK_FOOTER_MENU).items.map((item) => {
         if (!item.url) return null;
         // if the url is internal, we strip the domain
@@ -52,9 +55,10 @@ function FooterMenu({menu, primaryDomainUrl}) {
         const isExternal = !url.startsWith('/');
         return isExternal ? (
           <a href={url} key={item.id} rel="noopener noreferrer" target="_blank">
-            {item.title}
-          </a>
+              {item.title}
+            </a>
         ) : (
+          <li>
           <NavLink
             end
             key={item.id}
@@ -62,11 +66,15 @@ function FooterMenu({menu, primaryDomainUrl}) {
             style={activeLinkStyle}
             to={url}
           >
-            {item.title}
+          {item.title}
           </NavLink>
+          </li>
         );
       })}
+       </ul>
+      </div>
     </nav>
+    </div>
   );
 }
 

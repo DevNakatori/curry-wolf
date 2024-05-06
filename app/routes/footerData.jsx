@@ -4,12 +4,12 @@ export function KeepInTouch() {
         <div className="footer-sub-block">
             <span className='yellow-head'>Keep in touch</span>
             <div className="footer-flex footer-contact">
-              <div>
+              <div className="keep-wrap">
               <span>
               Phone
               </span><a href='tel:+493033937339'>+49 30 339 37 339</a>
               </div>
-              <div>
+              <div className="keep-wrap">
               <span>Fax</span> <a href='tel:+493033970097'>+49 30 339 70 097</a>
               </div>
               <a href="mailto:info@curry-wolf.de">info@curry-wolf.de</a>

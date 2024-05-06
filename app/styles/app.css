@@ -474,51 +474,89 @@ aside li {
 /* custom css start  */
 
 .container {
-  max-width: 1710px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 20px;
+	max-width: 1710px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 20px;
 }
 .inner-header {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
-.header-menu-desktop{
-  display: flex;
-  grid-gap: 2.1875em;
-  margin-left:2rem;
+.header-menu-desktop {
+	display: flex;
+	grid-gap: 2.1875em;
+	margin-left: 2rem;
+	a {
+		font-size: 25px;
+		line-height: 31px;
+		color: #fff !important;
+		font-weight: 400 !important;
+	}
 }
-.header{padding: 18px 0;}
-.header-menu-desktop a{
-  font-size: 25px;
-  line-height:31px;
-  color: #fff !important;
-  font-weight: 400 !important;
+.header {
+	padding: 18px 0;
 }
-.header-ctas{    
-  grid-gap: 2rem;
+.header-ctas {
+	grid-gap: 2rem;
 }
-nav.header-ctas a {
-  color: #fff;
+nav {
+	&.header-ctas {
+		a {
+			color: #fff;
+			span {
+				position: absolute;
+				top: -7px;
+				right: -3px;
+			}
+		}
+	}
 }
-@media (max-width: 768px){
-  .header-menu-desktop{
-      grid-gap: 1.1875em;
-  }
-  .header-menu-desktop a{
-      font-size: 20px;
-      line-height: 25px;
-  }
-
+.footer-child {
+	display: flex;
+	flex-wrap: wrap;
 }
-@media (max-width: 767px){
-  .header-menu-mobile a{
-      font-size: 18px;
-      line-height:18px;
-      font-weight: 400 !important;
-  }
-  .header-menu-mobile{
-      grid-gap: 1rem;
-  }
-  .header-ctas{grid-gap: 1rem;}
+span {
+	&.yellow-head {
+		font-size: 30px;
+		line-height: 25px;
+		font-weight: 400 !important;
+		color: #FEDE03;
+		font-family: Days One, sans-serif;
+		margin-bottom: 32px;
+		display: block;
+	}
+}
+.footer-inner {
+	ul {
+		li {
+			a {
+				width: auto;
+				font-size: 25px;
+				line-height: 25px;
+				font-weight: 400 !important;
+				color: #FEDE03;
+				font-family: Days One, sans-serif;
+			}
+		}
+	}
+}
+.footer-contact span,.footer-contact a {
+	font-size: 25px;
+	line-height: 25px;
+	font-weight: 400 !important;
+	color: #fff;
+}
+.footer-contact {
+	& > div {
+		margin-bottom: 20px;
+	}
+}
+.footer-contact-info {
+	display: flex;
+}
+.footer-icon {
+	a {
+		margin: 0 14px;
+	}
 }
